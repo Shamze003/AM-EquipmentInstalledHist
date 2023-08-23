@@ -1,0 +1,8 @@
+Equipment;hierarchyLevel;parentNodeID;drillState;description
+100177720;0;null;"expanded";"1"
+100177721;0;null;"expanded";"2"
+100177722;0;null;"expanded";"3"
+100177723;1;1;"leaf";"1.1"
+100177724;1;1;"expanded";"1.2"
+100177725;2;5;"leaf";"1.2.1"
+100177726;2;5;"leaf";"1.2.2"

@@ -1,0 +1,46 @@
+{
+  "name": "AM-EquipmentInstalledHist",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.4.0",
+    "@sap/cds": "^7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.108.12"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "start memory": "cds run --in-memory",
+    "watch-cmlequipchangelog": "cds watch --open cmlequipchangelog/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/cmlequipchangelog"
+  ],
+  "cds": {
+    "requires": {
+      "API_EQUIPMENT": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_EQUIPMENT",
+        "[production]": {
+          "credentials": {
+            "destination": "DRU_200_HTTP_PP",
+            "path": "/sap/opu/odata/sap/API_EQUIPMENT/",
+            "forwardAuthToken": true,
+            "csrf": true,
+            "csrfInBatch": true
+          }
+        }
+      },
+      "auth": {
+        "kind": "dummy-auth"
+    }
+    }
+  }
+}
